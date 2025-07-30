@@ -1,0 +1,19 @@
+.errorPage {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 150px;
+}
+
+.errorBody {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.homeLink {
+  font-size: 18px;
+}

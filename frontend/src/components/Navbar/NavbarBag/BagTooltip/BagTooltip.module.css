@@ -1,0 +1,129 @@
+/* Spacing */
+
+.bagTooltip {
+  width: 380px;
+  padding: 20px;
+}
+
+.horizontalLine {
+  margin: 30px 0px;
+}
+
+.fruitsList {
+  gap: 20px;
+}
+
+.infoContainer {
+  gap: 6px;
+}
+
+.leftContainer {
+  gap: 20px;
+}
+
+.imageContainer {
+  padding: 25px;
+}
+
+.total {
+  margin-bottom: 30px;
+}
+
+.checkoutButton {
+  margin-bottom: 10px;
+}
+
+/* Other styles */
+
+.fruitsList {
+  display: flex;
+  flex-direction: column;
+}
+
+.fruit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leftContainer {
+  display: flex;
+  align-items: center;
+}
+
+.rightContainer {
+  width: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.horizontalLine {
+  border: 1px solid rgb(234, 234, 234);
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.imageContainer {
+  background-color: var(--color-100);
+  border-radius: 6px;
+}
+
+.image {
+  height: 24px;
+  width: 24px;
+}
+
+.qty {
+  font-size: 14px;
+  color: var(--color-400);
+  font-weight: 400;
+}
+
+.total {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.totalAndVat {
+  display: flex;
+}
+
+.inclVat {
+  transform: translateY(1px);
+  margin-left: 8px;
+  font-size: 16px;
+  color: var(--color-400);
+}
+
+.delete {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border: solid 1px var(--color-200);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.delete:hover {
+  background-color: var(--color-200);
+}
+
+.deleteIcon {
+  height: 14px;
+  width: 14px;
+  fill: var(--color-red);
+}
+
+.emptyBag {
+  font-size: 16px;
+  color: var(--color-400);
+}

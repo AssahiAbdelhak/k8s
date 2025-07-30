@@ -1,0 +1,32 @@
+.bagContainer {
+  cursor: pointer;
+}
+
+.bag {
+  height: 30px;
+  width: 30px;
+}
+
+.number {
+  pointer-events: none;
+  font-weight: 700;
+  font-size: 9px;
+}
+
+.bagContainer {
+  position: relative;
+}
+
+.number {
+  position: absolute;
+  top: 14.5px;
+  left: 12.5px;
+}
+
+.navbarBag .bagTooltip {
+  z-index: 2;
+  color: #222;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}

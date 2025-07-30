@@ -1,0 +1,74 @@
+.title {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+.list {
+  overflow: hidden;
+  transition: height 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.list {
+  height: 0px;
+}
+
+.list.expanded {
+  height: 218px;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.listItem:hover {
+  background-color: var(--color-100);
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: solid 1px var(--color-300);
+  border-radius: 4px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.1s ease, border-color 0.1s ease;
+}
+
+.checkbox.checked {
+  background-color: black;
+  border-color: black;
+  animation: clickEffect 0.5s ease;
+}
+
+.checkIcon {
+  fill: white;
+}
+
+.itemName {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+@keyframes clickEffect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

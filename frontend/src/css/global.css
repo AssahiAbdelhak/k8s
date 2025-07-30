@@ -1,0 +1,99 @@
+:root {
+  /* Tailwind neutral color palette */
+  --color-50: #fafafa;
+  --color-100: rgb(245, 245, 245, 1);
+  --color-200: #e5e5e5;
+  --color-300: #d4d4d4;
+  --color-400: #a3a3a3;
+  --color-500: #737373;
+  --color-600: #525252;
+  --color-700: #404040;
+  --color-800: #262626;
+  --color-900: #171717;
+  --color-950: #0a0a0a;
+
+  --color-red: #ff4646;
+  --color-blue: #3895ff;
+  --color-blue-dark: #2666dc;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: var(--color-400);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-500);
+}
+
+html {
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: var(--font-size);
+  font-weight: 500;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+svg {
+  height: 24px;
+  width: 24px;
+}
+
+hr {
+  width: 100%;
+  border: 1px solid rgb(240, 240, 240);
+}
+
+/* Logo */
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+/* Titles */
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Fruit Names, Secondary Titles, Navbar Links */
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Family Names */
+h4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-600);
+}
+
+/* Fruit Price */
+h5 {
+  font-size: 16px;
+  font-weight: 600;
+}

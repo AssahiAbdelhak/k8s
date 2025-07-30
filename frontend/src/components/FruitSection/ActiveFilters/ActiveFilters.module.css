@@ -1,0 +1,28 @@
+.activeFilters {
+  display: flex;
+  gap: 10px;
+}
+
+.activeFilter {
+  font-size: 10px;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: white;
+  background-color: #3895ff;
+}
+
+.closeButton {
+  display: flex;
+}
+
+.closeIcon {
+  cursor: pointer;
+  fill: white;
+  height: 12px;
+  width: 12px;
+}

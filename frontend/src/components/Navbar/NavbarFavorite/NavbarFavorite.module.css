@@ -1,0 +1,21 @@
+.favorite {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+
+.number {
+  pointer-events: none;
+  font-weight: 700;
+  font-size: 9px;
+}
+
+.navbarFavorite {
+  position: relative;
+}
+
+.number {
+  position: absolute;
+  top: 11px;
+  left: 12.5px;
+}

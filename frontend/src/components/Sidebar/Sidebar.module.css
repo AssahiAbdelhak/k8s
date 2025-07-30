@@ -1,0 +1,9 @@
+.sidebar {
+  padding: 50px;
+}
+
+@media screen and (max-width: 540px) {
+  .sidebar {
+    padding: 30px;
+  }
+}
