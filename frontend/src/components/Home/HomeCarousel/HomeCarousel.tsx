@@ -33,7 +33,9 @@ const HomeCarousel = () => {
   const carouselFruits = carouselFruitNames.map((name) =>
     fruits.find((fruit) => fruit.name === name)
   );
+  console.log('here are fruits ==> ',fruits)
 
+  console.log(carouselFruits)
   const settings = {
     dots: true,
     infinite: true,

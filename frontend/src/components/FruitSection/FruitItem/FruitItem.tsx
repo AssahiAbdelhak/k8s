@@ -6,6 +6,7 @@ import getImageSrc from "../../../utils/getImageSrc";
 import { Fruit } from "../../../data/types";
 import FavoriteIcon from "../../../icons/FavoriteIcon";
 import BagIcon from "../../../icons/BagIcon";
+import axios from "axios";
 
 interface FruitItemProps {
   fruit: Fruit;
@@ -17,7 +18,7 @@ const FruitItem = ({ fruit }: FruitItemProps) => {
 
   const handleFavoriteClick = (e) => {
     e.preventDefault();
-
+    axios.put('http://127.0.0.1:5000/favs/'+id)
     setFruits((prevFruits) =>
       prevFruits.map((f) => (f.id === id ? { ...f, isFavorite: !f.isFavorite } : f))
     );
@@ -25,12 +26,12 @@ const FruitItem = ({ fruit }: FruitItemProps) => {
 
   const handleBagClick = (e) => {
     e.preventDefault();
-
+    axios.put('http://127.0.0.1:5000/cart/' + id)
     setFruits((prevFruits) => prevFruits.map((f) => (f.id === id ? { ...f, inBag: !f.inBag } : f)));
   };
 
   return (
-    <Link to={slug}>
+    <Link to={id}>
       <Flipped key={id} flipId={id}>
         <div className={styles.fruitItem}>
           <FavoriteIcon

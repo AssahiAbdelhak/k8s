@@ -5,19 +5,21 @@ import getImageSrc from "../../../utils/getImageSrc";
 import InStock from "../../common/InStock/InStock";
 import EditQuantity from "../../common/EditQuantity/EditQuantity";
 import DeleteIcon from "../../../icons/DeleteIcon";
+import axios from "axios";
 
 const BagFruit = ({ fruit }) => {
   const { setFruits } = useStoreContext();
   const { id, name, slug, family, price, quantity } = fruit;
 
   const handleDelete = () => {
+    axios.put('http://127.0.0.1:5000/cart/' + id)
     setFruits((prevFruits) => prevFruits.map((f) => (f.id === id ? { ...f, inBag: false } : f)));
   };
 
   return (
     <li className={styles.bagFruit}>
       <div className={styles.leftContainer}>
-        <Link to={`/store/${slug}`}>
+        <Link to={`/store/${id}`}>
           <div className={styles.imageContainer}>
             <img className={styles.image} src={getImageSrc(slug)} alt={name} />
           </div>

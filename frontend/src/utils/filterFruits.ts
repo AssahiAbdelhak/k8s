@@ -1,7 +1,7 @@
-import { Filters, Fruits } from "../data/types";
+import { Filters, Fruit, Fruits } from "../data/types";
 
 // Returns true if the fruit matches the query, otherwise false
-function matchesQuery(fruit, query) {
+function matchesQuery(fruit: Fruit, query: String) {
   const getCleanStr = (str) => {
     return str.replace(/\s+/g, "").toLowerCase();
   };
@@ -14,6 +14,7 @@ function matchesQuery(fruit, query) {
 
   // If there's a query, perform checks
   if (cleanQuery) {
+    console.log(cleanQuery)
     const matchString = (str) => getCleanStr(str).includes(cleanQuery);
 
     const matchVitamins = (arr) => arr.some((vitamin) => matchString(vitamin));

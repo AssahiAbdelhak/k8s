@@ -10,23 +10,25 @@ import ButtonBlue from "../../common/ButtonBlue/ButtonBlue";
 import ButtonWhite from "../../common/ButtonWhite/ButtonWhite";
 import ButtonBack from "../../common/ButtonBack/ButtonBack";
 import FavoriteIcon from "../../../icons/FavoriteIcon";
+import axios from "axios";
 
 const FruitView = () => {
   const navigate = useNavigate();
   const { fruits, setFruits } = useStoreContext();
-  const { slug } = useParams<{ slug: string }>();
-
-  const fruit = fruits.find((fruit) => fruit.slug === slug);
-  const { id, name, price, quantity, family, colors, vitamins, isFavorite, inBag } = fruit;
+  const { id } = useParams<{ id: string }>();
+  const fruit = fruits.find((fruit) => fruit.id === id);
+  const { slug, name, price, quantity, family, colors, vitamins, isFavorite, inBag } = fruit;
   const description = fruitDescriptions[name];
 
   const handleFavoriteClick = () => {
+    axios.put('http://127.0.0.1:5000/favs/' + id)
     setFruits((prevFruits) =>
       prevFruits.map((f) => (f.id === id ? { ...f, isFavorite: !f.isFavorite } : f))
     );
   };
 
   const handleBagClick = () => {
+    axios.put('http://127.0.0.1:5000/cart/' + id)
     setFruits((prevFruits) => prevFruits.map((f) => (f.id === id ? { ...f, inBag: !f.inBag } : f)));
   };
 
@@ -35,6 +37,7 @@ const FruitView = () => {
   };
 
   const handleBuyNow = () => {
+    axios.put('http://127.0.0.1:5000/addTocart/' + id)
     setFruits((prevFruits) => prevFruits.map((f) => (f.id === id ? { ...f, inBag: true } : f)));
 
     navigate("/bag");
