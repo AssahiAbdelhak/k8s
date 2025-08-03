@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fask-app
+  labels:
+    app: flask
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask
+  template:
+    metadata:
+      labels:
+        app: flask
+    spec:
+      containers:
+      - name: flask-app
+        image: abdelhak245/flask-app:latest
+        ports:
+        - containerPort: 5000
+        env:
+        - name: DB_HOST
+          value: postgres-service  # Must match the Service metadata.name
+        - name: DB_PORT
+          value: "5432"
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: postgres-secret
+              key: db_username
+        - name: DB_PASS
+          valueFrom:
+            secretKeyRef:
+              name: postgres-secret
+              key: db_password
+        - name: DB_NAME
+          value: fruits  # Replace with your actual database name
