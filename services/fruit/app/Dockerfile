@@ -1,12 +1,18 @@
-FROM python
+FROM python:3.13-slim
 
 WORKDIR /app
 
+RUN apt-get update && apt-get install -y \
+    gcc \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY requirements.txt ./requirements.txt
 
-RUN pip install -r ./requirements.txt
+RUN pip install --no-cache-dir -r ./requirements.txt
 
-COPY *.py ./
+COPY main.py ./
+COPY routes.py ./
 
 COPY db/connection.py ./db/connection.py
 COPY db/functions.py ./db/functions.py
