@@ -1,7 +1,3 @@
-Sure! Here's the final `README.md` content tailored specifically for your project at [`https://github.com/AssahiAbdelhak/k8s`](https://github.com/AssahiAbdelhak/k8s):
-
----
-
 ```markdown
 # 🍓 Fruit Store App – Full Stack Deployment with Kubernetes
 

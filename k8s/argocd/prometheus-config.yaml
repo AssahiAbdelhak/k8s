@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: flask-backend-monitor
+  labels:
+    release: monitoring  # Important: match Prometheus release name
+spec:
+  selector:
+    matchLabels:
+      app: flask
+  endpoints:
+  - port: web  # match the service port name
+    path: /metrics
+    interval: 15s

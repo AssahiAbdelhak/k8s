@@ -2,3 +2,4 @@ flask
 psycopg2
 flask_cors
 dotenv
+prometheus_flask_exporter

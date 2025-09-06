@@ -9,9 +9,11 @@ spec:
   source:
     repoURL: 'https://github.com/AssahiAbdelhak/k8s.git'
     targetRevision: main
-    path: k8s/base
+    path: k8s/argocd
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: default
   syncPolicy:
-    automated: {}
+    automated:
+      prune: true        # delete resources removed from Git
+      selfHeal: true     # fix drift if someone changes cluster manually
